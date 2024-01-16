@@ -1,8 +1,20 @@
 ---
-const {title,genre,path="/Images/blog3.png",href} = Astro.props;
+const { title, genre, path = "/Images/blog3.png", href } = Astro.props;
 ---
-<a class="flex flex-col items-start justify-start gap-y-2 cursor-pointer group " href={href}>
-    <img src={path} alt="a" class="w-96 h-68 object-contain rounded-3xl hover:opacity-70 " />
-    <div class="text-2xl font-semibold text-white font-inter w-80 group-hover:underline" >{title}</div>
-    <div class="text-xl font-medium text-zinc-400 font-inter ">{genre}</div>
+
+<a
+  class="flex flex-col items-start justify-start gap-y-2 cursor-pointer group"
+  href={href}
+>
+  <img
+    src={path}
+    alt="a"
+    class="w-96 h-68 object-contain rounded-3xl hover:opacity-70"
+  />
+  <div
+    class="text-2xl font-semibold text-white font-inter w-80 group-hover:underline"
+  >
+    {title}
+  </div>
+  <div class="text-xl font-medium text-zinc-400 font-inter">{genre}</div>
 </a>

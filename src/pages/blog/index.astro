@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import BlogPostTemplate from "../../components/BlogPageTemplate/index.astro";
+
+
+const posts = await getCollection("blog");
+import Main from "../../layouts/Layout.astro";
+
+---
+
+<Main title="blog">
+  <div class="w-full flex flex-col gap-y-12 mx-auto bg-black py-20">
+    <div
+      class="text-9xl font-semibold font-anton text-white ml-16 w-3/6 text-left py-12 pr-4 tracking-wide"
+    >
+      updates from our world
+    </div>
+    <div
+      class="grid grid-cols-2 xl:grid-cols-3 place-items-start gap-y-10 mx-16"
+    >
+      {
+        posts.map((post) => (
+          <div class="p-0 ">
+            <BlogPostTemplate
+              key={post.id}
+              href={`/blog/${post.slug}`}
+              title={post.data.title}
+              genre={post.data.description}
+              src={post.data.heroImage}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Main>
