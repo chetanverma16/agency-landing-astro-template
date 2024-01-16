@@ -1,0 +1,42 @@
+---
+import "@fontsource/anton";
+import WorkPageTemplate from "../components/WorkPageTemplate/index.astro";
+const image = [
+  { title: "Erina's Portfolio", path: "/Images/work1.png" },
+  { title: "Erina's Portfolio", path: "/Images/work2.png" },
+  { title: "Erina's Portfolio", path: "/Images/work3.png" },
+  { title: "Erina's Portfolio", path: "/Images/work4.png" },
+  { title: "Erina's Portfolio", path: "/Images/work5.png" },
+  { title: "Erina's Portfolio", path: "/Images/work6.png" },
+  { title: "Erina's Portfolio", path: "/Images/work7.png" },
+  { title: "Erina's Portfolio", path: "/Images/work8.png" },
+  { title: "Erina's Portfolio", path: "/Images/work2.png" },
+];
+import Navbar from "../components/Navbar/index.astro";
+import Footer from "../components/Footer/index.astro";
+---
+
+<Navbar />
+<div class="w-full flex flex-col gap-y-12 mx-auto bg-black py-20">
+  <div
+    class="text-9xl font-semibold font-anton text-white mx-auto w-full text-left py-12 pl-16 pr-4 tracking-wide"
+  >
+    We shape brands that <br> need no introduction
+  </div>
+  <!-- <WorkPageTemplate title={image.title} image={image.path}/> -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 pl-16 gap-10">
+    {
+      image.map((index) => (
+        <div class="cursor-pointer flex flex-col items-start justify-center gap-y-8 w-auto px-0">
+          <div class="flex flex-col items-start justify-center gap-y-8 group hover:scale-105 duration-200 ease-in">
+            <WorkPageTemplate image={index.path} />
+            <span class="uppercase text-white group-hover:text-gray-200 text-4xl font-medium font-anton group-hover:underline ">
+              {index.title}
+            </span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+<Footer />

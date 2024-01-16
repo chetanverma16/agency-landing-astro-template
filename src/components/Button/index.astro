@@ -1,0 +1,55 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
+import "@fontsource/anton";
+
+
+const button = cva("button", {
+  variants: {
+    intent: {
+      primary: [
+        "bg-[#81CC06]",
+        "rounded-full",
+        "shadow-inner",
+        "active:shadow",
+        "shadow-[#E8E8E8]",
+        "text-white",
+      ],
+      secondary: [
+        "bg-[#81CC06]",
+        "rounded-full",
+        "shadow-inner",
+        "active:shadow",
+        "shadow-[#E8E8E8]",
+        "text-white",
+        "w-[724px]",
+      ],
+    },
+    size: {
+      small: ["text-sm"," font-anton", "py-1", "px-2"],
+      medium: ["text-2xl"," font-anton", "font-medium", "py-2", "px-8"],
+    },
+  },
+  compoundVariants: [
+    {
+      intent: "primary",
+      size: "medium",
+      class: "transition-all duration-200 ease-in-out",
+    },
+  ],
+});
+
+export interface Props
+  extends HTMLAttributes<"button">,
+    VariantProps<typeof button> {}
+
+/**
+ * For Astro components, we recommend setting your defaultVariants within
+ * Astro.props (which are `undefined` by default)
+ */
+const { intent = "primary", size = "medium" } = Astro.props;
+---
+
+<button class={button({ intent, size })}>
+  <slot />
+</button>

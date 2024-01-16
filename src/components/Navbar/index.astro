@@ -1,0 +1,27 @@
+---
+import Button from "../Button/index.astro";
+import Link from "../Link/index.astro";
+---
+
+<div
+  class="w-full flex items-center justify-between bg-black text-white py-10 px-16"
+>
+  <Link href="/" current>
+    <div
+      class="rounded-full bg-[#2E2E2E] w-16 h-16 flex items-center justify-center font-anton text-2xl"
+    >
+      CA
+    </div>
+  </Link>
+  <div class="flex items-center justify-between gap-7 w-44 font-anton text-2xl">
+    <Link href="/work" current>
+      <div class="cursor-pointer hover:opacity-80">work</div>
+    </Link>
+    <Link href="/blog">
+      <div class="hover:opacity-90 cursor-pointer">blog</div>
+    </Link>
+  </div>
+  <div>
+    <Button>Connect</Button>
+  </div>
+</div>
