@@ -7,11 +7,61 @@ import Testimonial from "../components/Testimonial/index.astro";
 import Main from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 const company = ["Logo1", "Logo2", "Logo3", "Logo4"];
+const customerFeedback = [
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Amir Uddin",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Salim Ahmed",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+];
 ---
 
 <Main title="main">
   <div
-    class="flex flex-col items-center justify-center gap-y-16 bg-black pb-32 container-max-width"
+    class="flex flex-col items-center justify-center gap-y-16 bg-black container-max-width pb-32 rounded-b-2xl "
   >
     <div
       class="text-6xl sm:text-9xl font-anton text-white font-medium px-3 sm:px-16 leading-snug xl:leading-none"
@@ -125,9 +175,9 @@ const company = ["Logo1", "Logo2", "Logo3", "Logo4"];
       </div>
     </div>
     <div
-      class="flex flex-col xl:flex-row sm:items-start justify-evenly gap-y-6 w-full bg-[#81CC06] px-3 sm:px-16 py-12 my-10"
+      class="flex flex-col xl:flex-row sm:items-start justify-evenly gap-y-6 w-full bg-[#81CC06] px-3 sm:px-16 py-12 xl:py-24 my-10"
     >
-      <div class="text-6xl sm:text-9xl font-anton font-medium text-white">
+      <div class="text-6xl sm:text-9xl font-anton font-medium text-white ">
         WE LIKE TO DO THINGS <br />
 
         <span class="text-black"> DIFFERENTLY.</span>
@@ -143,41 +193,30 @@ const company = ["Logo1", "Logo2", "Logo3", "Logo4"];
         Stipe for easy and safe transaction.
       </div>
     </div>
-    <!-- <div class="w-full flex" class:list="px-16">
-      <div class="flex" >
-        <Testimonial />
-      </div>
-      <div class="swiper-slide">
-        <Testimonial />
-      </div>
-      <div class="swiper-slide">
-        <Testimonial />
-      </div>
-      <div class="swiper-slide">
-        <Testimonial />
-      </div>
-    </div>
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><Testimonial /></div>
-    <div class="swiper-slide"><Testimonial /></div>
-    <div class="swiper-slide"><Testimonial /></div>
-    <div class="swiper-slide"><Testimonial /></div>
-    <div class="swiper-slide"><Testimonial /></div>
-    <div class="swiper-slide"><Testimonial /></div>
-    <div class="swiper-slide"><Testimonial /></div>
-    <div class="swiper-slide"><Testimonial /></div>
-    <div class="swiper-slide"><Testimonial /></div>
-  </div>
-  <div class="swiper-pagination"></div>
-</div>
-</div> -->
+
     <div
-      class="text-6xl sm:text-9xl font-anton font-medium text-white w-full px-3 sm:px-16"
+      class="text-6xl sm:text-9xl font-anton font-medium text-white w-full px-3 sm:px-16 bg-black"
     >
       WORDS FROM OUR <br /> PARTNERS
     </div>
-    <div class="w-full mx-auto text-center px-3 sm:px-16">
+
+    <swiper-container class="w-full h-full" loop="false" init="false">
+      {
+        customerFeedback.map((index) => (
+          <swiper-slide class=" py-16  cursor-grab  flex items-center justify-center ">
+            <div class=" box-shadow-2 rounded-md   text-white w-3/4 ">
+              <div class="flex items-center justify-center">
+                <Testimonial
+                  name={index.name}
+                  description={index.description}
+                />
+              </div>
+            </div>
+          </swiper-slide>
+        ))
+      }
+    </swiper-container>
+    <div class="w-full mx-auto text-center px-3 sm:px-16 bg-black">
       <div class="text-6xl sm:text-9xl font-anton font-medium text-white">
         OUR CLIENTS
       </div>
@@ -227,39 +266,26 @@ const company = ["Logo1", "Logo2", "Logo3", "Logo4"];
       </div>
     </div>
   </div>
-
-  <style>
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      freeMode: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
 </Main>
+
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+></script>
+
+<script is:inline>
+  const swiperEl = document.querySelector("swiper-container");
+
+  Object.assign(swiperEl, {
+    breakpoints: {
+      640: {
+        slidesPerView: 1.5,
+      },
+      1024: {
+        slidesPerView: 2.5,
+      },
+    },
+  });
+
+  swiperEl.initialize();
+</script>

@@ -1,21 +1,18 @@
 ---
-
+const {name,description,path="/Images/avatar.png"}= Astro.props;
 ---
 
-<div class="p-3 flex flex-col items-center justify-start gap-y-6 text-white w-1/4 ">
+<div class="p-3 flex flex-col items-center justify-start gap-y-6 text-white w-3/4  ">
   <p class="text-lg">
-    Our experience with UX Things and Filip, in particular, has been nothing
-    short of exceptional. From crafting beautifully modern designs to diligently
-    speccing and testing all frontend development, he has left no stone
-    unturned.
+    {description}
   </p>
   <div class="flex items-start justify-start w-full gap-3">
     <div>
-      <img src="/Images/avatar.png" alt="a" class="w-16 h-16 rounded-full" />
+      <img src={path} alt="a" class="w-16 h-16 rounded-full" />
     </div>
     <div class="flex flex-col items-start justify-center">
       <div class="font-inter text-zinc-400 text-xl font-medium">
-        Jane Cooper
+        {name}
       </div>
       <div class="font-inter uppercase text-zinc-50 text-base font-medium">
         CEO
