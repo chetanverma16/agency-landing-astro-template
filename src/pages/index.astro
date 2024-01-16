@@ -4,6 +4,11 @@ import Button from "../components/Button/index.astro";
 import Avatar from "../components/Avatar/index.astro";
 
 import Testimonial from "../components/Testimonial/index.astro";
+import Hero from "../modules/Hero/index.astro"
+import Gallery from "../modules/Gallery/index.astro"
+import TestimonialModule from "../modules/TestimonialModule/index.astro"
+import ClientList from "../modules/ClientList/index.astro"
+
 import Main from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 const company = ["Logo1", "Logo2", "Logo3", "Logo4"];
@@ -60,10 +65,11 @@ const customerFeedback = [
 ---
 
 <Main title="main">
-  <div
+  <!-- <div
     class="flex flex-col items-center justify-center gap-y-16 bg-black container-max-width pb-32 rounded-b-2xl "
-  >
-    <div
+  > -->
+  <div>
+    <!-- <div
       class="text-6xl sm:text-9xl font-anton text-white font-medium px-3 sm:px-16 leading-snug xl:leading-none"
     >
       WE CRAFT <span class="text-white/50"> WEBSITES, APPS, DASHBOARD.</span>
@@ -107,9 +113,9 @@ const customerFeedback = [
           Multicultural team players
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div
+    <!-- <div
       class="flex flex-col gap-y-20 items-center justify-center px-3 text-white"
     >
       <Link href={"/"}>
@@ -173,9 +179,9 @@ const customerFeedback = [
           </Link>
         </div>
       </div>
-    </div>
-    <div
-      class="flex flex-col xl:flex-row sm:items-start justify-evenly gap-y-6 w-full bg-[#81CC06] px-3 sm:px-16 py-12 xl:py-24 my-10"
+    </div> -->
+    <!-- <div
+      class="flex flex-col xl:flex-row sm:items-end justify-start gap-y-6  w-full bg-[#81CC06] px-3 sm:px-16 py-12 xl:py-24 my-10"
     >
       <div class="text-6xl sm:text-9xl font-anton font-medium text-white ">
         WE LIKE TO DO THINGS <br />
@@ -215,8 +221,8 @@ const customerFeedback = [
           </swiper-slide>
         ))
       }
-    </swiper-container>
-    <div class="w-full mx-auto text-center px-3 sm:px-16 bg-black">
+    </swiper-container> -->
+    <!-- <div class="w-full mx-auto text-center px-3 sm:px-16 bg-black">
       <div class="text-6xl sm:text-9xl font-anton font-medium text-white">
         OUR CLIENTS
       </div>
@@ -264,11 +270,15 @@ const customerFeedback = [
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+    <Hero/>
+    <Gallery/>
+    <TestimonialModule/>
+    <ClientList/>
   </div>
 </Main>
 
-<script
+<!-- <script
   is:inline
   src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
 ></script>
@@ -288,4 +298,4 @@ const customerFeedback = [
   });
 
   swiperEl.initialize();
-</script>
+</script> -->

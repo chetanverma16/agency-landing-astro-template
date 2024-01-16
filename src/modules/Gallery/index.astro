@@ -1,0 +1,70 @@
+---
+import Button from "../../components/Button/index.astro";
+import Link from "../../components/Link/index.astro";
+---
+
+<div
+  class="flex flex-col items-center justify-center gap-y-16 bg-black container-max-width pb-32 "
+>
+  <div
+    class="flex flex-col gap-y-20 items-center justify-center px-3 text-white"
+  >
+    <Link href={"/"}>
+      <div class="flex flex-col gap-y-2 items-start justify-start text-white">
+        <img src="/Images/unsplash1.png" alt="a" class="w-full rounded-3xl" />
+        <div class="text-2xl sm:text-3xl xl:text-4xl font-anton font-medium">
+          Space-furniture
+        </div>
+      </div>
+    </Link>
+
+    <div class="w-full flex items-center justify-between gap-3">
+      <Link href={"/"}>
+        <div class="flex flex-col gap-y-2 items-start justify-start text-white">
+          <img
+            src="/Images/unsplash2.png"
+            alt="a"
+            class="w-11/12 rounded-3xl"
+          />
+          <div class="text-2xl sm:text-3xl xl:text-4xl font-anton font-medium">
+            Erina’s Portfolio
+          </div>
+        </div>
+      </Link>
+      <div class="flex flex-col items-center justify-center gap-y-5">
+        <Link href={""}>
+          <div
+            class="flex flex-col gap-y-2 items-start justify-start text-white"
+          >
+            <img
+              src="/Images/unsplash3.png"
+              alt="a"
+              class="w-11/12 rounded-3xl"
+            />
+            <div
+              class="text-2xl sm:text-3xl xl:text-4xl font-anton font-medium"
+            >
+              Medco
+            </div>
+          </div>
+        </Link>
+        <Link href={""}>
+          <div
+            class="flex flex-col gap-y-2 items-start justify-start text-white"
+          >
+            <img
+              src="/Images/unsplash4.png"
+              alt="a"
+              class="w-11/12 rounded-3xl"
+            />
+            <div
+              class="text-2xl sm:text-3xl xl:text-4xl font-anton font-medium"
+            >
+              Loique
+            </div>
+          </div>
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>

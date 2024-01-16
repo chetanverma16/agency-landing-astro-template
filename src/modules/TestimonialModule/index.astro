@@ -1,0 +1,118 @@
+---
+import Testimonial from "../../components/Testimonial/index.astro";
+const customerFeedback = [
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Amir Uddin",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Salim Ahmed",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+  {
+    description:
+      "We will also facilitate the business marketing of these products with our SEO experts so that they become a ready to use website & help sell product from company",
+    name: "Guy Hawkins",
+    image: "/Images/avatar.png",
+  },
+];
+---
+
+<div
+  class="flex flex-col items-center justify-center gap-y-16 bg-black container-max-width pb-32 "
+>
+  <div
+    class="flex flex-col xl:flex-row sm:items-end justify-start gap-y-6 w-full bg-[#81CC06] px-3 sm:px-16 py-12 xl:py-24 my-10"
+  >
+    <div class="text-6xl sm:text-9xl font-anton font-medium text-white">
+      WE LIKE TO DO THINGS <br />
+
+      <span class="text-black"> DIFFERENTLY.</span>
+    </div>
+    <div
+      class="font-inter text-base sm:text-xl font-medium w-64 text-zinc-50/85"
+    >
+      Slack Connect for seamless communication.
+    </div>
+    <div
+      class="font-inter text-base sm:text-xl font-medium w-64 text-zinc-50/85"
+    >
+      Stipe for easy and safe transaction.
+    </div>
+  </div>
+
+  <div
+    class="text-6xl sm:text-9xl font-anton font-medium text-white w-full px-3 sm:px-16 bg-black"
+  >
+    WORDS FROM OUR <br /> PARTNERS
+  </div>
+
+  <swiper-container class="w-full h-full" loop="false" init="false">
+    {
+      customerFeedback.map((index) => (
+        <swiper-slide class=" py-16  cursor-grab  flex items-center justify-center ">
+          <div class=" box-shadow-2 rounded-md   text-white w-3/4 ">
+            <div class="flex items-center justify-center">
+              <Testimonial name={index.name} description={index.description} />
+            </div>
+          </div>
+        </swiper-slide>
+      ))
+    }
+  </swiper-container>
+</div>
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+></script>
+
+<script is:inline>
+  const swiperEl = document.querySelector("swiper-container");
+
+  Object.assign(swiperEl, {
+    breakpoints: {
+      640: {
+        slidesPerView: 1.5,
+      },
+      1024: {
+        slidesPerView: 2.5,
+      },
+    },
+  });
+
+  swiperEl.initialize();
+</script>
