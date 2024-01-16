@@ -3,10 +3,10 @@ import "@fontsource/anton";
 import Navbar from "../components/Navbar/index.astro";
 import Footer from "../components/Footer/index.astro";
 import Button from "../components/Button/index.astro";
+import Main from "../layouts/Layout.astro";
 ---
 
-<main>
-  <Navbar />
+<Main title="contact">
   <div
     class="flex flex-col items-center justify-center gap-y-20 pt-20 pb-40 w-full mx-auto bg-black"
   >
@@ -72,5 +72,4 @@ import Button from "../components/Button/index.astro";
       </div>
     </div>
   </div>
-  <Footer />
-</main>
+</Main>

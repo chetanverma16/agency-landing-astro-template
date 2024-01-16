@@ -1,6 +1,6 @@
 ---
-
+const {src} = Astro.props;
 ---
 <div>
-    <img src="/Images/avatar.png" alt="avatar" class="w-14 h-14 object-contain rounded-full">
+    <img src={src} alt="avatar" class="w-14 h-14 object-contain rounded-full cursor-pointer ">
 </div>
