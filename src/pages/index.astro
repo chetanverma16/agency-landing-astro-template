@@ -2,13 +2,264 @@
 import Link from "../components/Link/index.astro";
 import Button from "../components/Button/index.astro";
 import Avatar from "../components/Avatar/index.astro";
+
+import Testimonial from "../components/Testimonial/index.astro";
+import Main from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+const company = ["Logo1", "Logo2", "Logo3", "Logo4"];
 ---
 
-<Avatar src="/Images/avatar.png" />
-<div class="text-xl text-red-600">Home</div>
-<Link href="/work">
-  <Button>work</Button>
-</Link>
-<Link href="/contactPage">
-    <Button>contact Page</Button>
-  </Link>
+<Main title="main">
+  <div
+    class="flex flex-col items-center justify-center gap-y-16 bg-black pb-32 container-max-width"
+  >
+    <div
+      class="text-6xl sm:text-9xl font-anton text-white font-medium px-3 sm:px-16 leading-snug xl:leading-none"
+    >
+      WE CRAFT <span class="text-white/50"> WEBSITES, APPS, DASHBOARD.</span>
+    </div>
+    <div class="w-full px-3 sm:px-16">
+      <Button>View pricing</Button>
+    </div>
+
+    <div
+      class="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-20 w-full py-12 sm:py-16 bg-zinc-900 px-3 sm:px-16"
+    >
+      <div class="flex flex-col gap-y-2 items-center justify-start sm:h-32">
+        <div class="font-anton font-semibold text-4xl text-white">5</div>
+        <div
+          class="font-inter text-lg sm:text-xl text-zinc-500 w-44 text-center"
+        >
+          Years leading transformations
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-2 items-center justify-start sm:h-32">
+        <div class="font-anton font-semibold text-4xl text-white">75</div>
+        <div
+          class="font-inter text-lg sm:text-xl text-zinc-500 w-44 text-center"
+        >
+          Successful clients
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-2 items-center justify-start sm:h-32">
+        <div class="font-anton font-semibold text-4xl text-white">02</div>
+        <div
+          class="font-inter text-lg sm:text-xl text-zinc-500 w-44 text-center"
+        >
+          03 Unicorns leading the market
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-2 items-center justify-start sm:h-32">
+        <div class="font-anton font-semibold text-4xl text-white">23</div>
+        <div
+          class="font-inter text-lg sm:text-xl text-zinc-500 w-44 text-center"
+        >
+          Multicultural team players
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col gap-y-20 items-center justify-center px-3 text-white"
+    >
+      <Link href={"/"}>
+        <div class="flex flex-col gap-y-2 items-start justify-start text-white">
+          <img src="/Images/unsplash1.png" alt="a" class="w-full rounded-3xl" />
+          <div class="text-2xl sm:text-3xl xl:text-4xl font-anton font-medium">
+            Space-furniture
+          </div>
+        </div>
+      </Link>
+
+      <div class="w-full flex items-center justify-between gap-3">
+        <Link href={"/"}>
+          <div
+            class="flex flex-col gap-y-2 items-start justify-start text-white"
+          >
+            <img
+              src="/Images/unsplash2.png"
+              alt="a"
+              class="w-11/12 rounded-3xl"
+            />
+            <div
+              class="text-2xl sm:text-3xl xl:text-4xl font-anton font-medium"
+            >
+              Erina’s Portfolio
+            </div>
+          </div>
+        </Link>
+        <div class="flex flex-col items-center justify-center gap-y-5">
+          <Link href={""}>
+            <div
+              class="flex flex-col gap-y-2 items-start justify-start text-white"
+            >
+              <img
+                src="/Images/unsplash3.png"
+                alt="a"
+                class="w-11/12 rounded-3xl"
+              />
+              <div
+                class="text-2xl sm:text-3xl xl:text-4xl font-anton font-medium"
+              >
+                Medco
+              </div>
+            </div>
+          </Link>
+          <Link href={""}>
+            <div
+              class="flex flex-col gap-y-2 items-start justify-start text-white"
+            >
+              <img
+                src="/Images/unsplash4.png"
+                alt="a"
+                class="w-11/12 rounded-3xl"
+              />
+              <div
+                class="text-2xl sm:text-3xl xl:text-4xl font-anton font-medium"
+              >
+                Loique
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col xl:flex-row sm:items-start justify-evenly gap-y-6 w-full bg-[#81CC06] px-3 sm:px-16 py-12 my-10"
+    >
+      <div class="text-6xl sm:text-9xl font-anton font-medium text-white">
+        WE LIKE TO DO THINGS <br />
+
+        <span class="text-black"> DIFFERENTLY.</span>
+      </div>
+      <div
+        class="font-inter text-base sm:text-xl font-medium w-64 text-zinc-50/85"
+      >
+        Slack Connect for seamless communication.
+      </div>
+      <div
+        class="font-inter text-base sm:text-xl font-medium w-64 text-zinc-50/85"
+      >
+        Stipe for easy and safe transaction.
+      </div>
+    </div>
+    <!-- <div class="w-full flex" class:list="px-16">
+      <div class="flex" >
+        <Testimonial />
+      </div>
+      <div class="swiper-slide">
+        <Testimonial />
+      </div>
+      <div class="swiper-slide">
+        <Testimonial />
+      </div>
+      <div class="swiper-slide">
+        <Testimonial />
+      </div>
+    </div>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><Testimonial /></div>
+    <div class="swiper-slide"><Testimonial /></div>
+    <div class="swiper-slide"><Testimonial /></div>
+    <div class="swiper-slide"><Testimonial /></div>
+    <div class="swiper-slide"><Testimonial /></div>
+    <div class="swiper-slide"><Testimonial /></div>
+    <div class="swiper-slide"><Testimonial /></div>
+    <div class="swiper-slide"><Testimonial /></div>
+    <div class="swiper-slide"><Testimonial /></div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+</div> -->
+    <div
+      class="text-6xl sm:text-9xl font-anton font-medium text-white w-full px-3 sm:px-16"
+    >
+      WORDS FROM OUR <br /> PARTNERS
+    </div>
+    <div class="w-full mx-auto text-center px-3 sm:px-16">
+      <div class="text-6xl sm:text-9xl font-anton font-medium text-white">
+        OUR CLIENTS
+      </div>
+      <div
+        class="font-inter w-full text-base sm:text-lg font-medium text-zinc-400 pt-10"
+      >
+        We created brands used by thousand of people around the world. Our
+        designs are unique, useful and user-friendly
+        <div class="flex flex-col gap-y-8 pt-12">
+          <div class="flex items-center justify-center gap-8 sm:gap-28">
+            {
+              company.map((index) => (
+                <div class="flex items-center justify-center gap-10">
+                  <Icon name={index} class=" w-16 sm:w-20 h-16" />
+                </div>
+              ))
+            }
+          </div>
+          <div class="flex items-center justify-center gap-8 sm:gap-28">
+            {
+              company.map((index) => (
+                <div class="flex items-center justify-center gap-10">
+                  <Icon name={index} class=" w-16 sm:w-20 h-16" />
+                </div>
+              ))
+            }
+          </div>
+          <div class="flex items-center justify-center gap-8 sm:gap-28">
+            {
+              company.map((index) => (
+                <div class="flex items-center justify-center gap-10">
+                  <Icon name={index} class=" w-16 sm:w-20 h-16" />
+                </div>
+              ))
+            }
+          </div>
+          <div class="flex items-center justify-center gap-8 sm:gap-28">
+            {
+              company.map((index) => (
+                <div class="flex items-center justify-center gap-10">
+                  <Icon name={index} class=" w-16 sm:w-20 h-16" />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</Main>

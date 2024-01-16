@@ -1,0 +1,19 @@
+---
+
+const { src, title, genre ,link="/blog/mastering-minimalism-designers-guide" } = Astro.props;
+---
+
+<a
+  href={link}
+  class=" w-[500px]  flex items-center justify-center gap-5 group-hover cursor-pointer group pt-10 pb-24 "
+>
+  <img src={src} alt="a" class="w-48 h-40 rounded-3xl object-cover group-hover:opacity-60 duration-200 ease-in" />
+  <div class="flex flex-col items-start justify-center gap-y-3">
+    <div class="font-inter text-base sm:text-2xl font-semibold text-white group-hover:underline">
+      {title}
+    </div>
+    <div class="font-inter text-sm sm:text-xl font-semibold text-zinc-400/70 group-hover:text-zinc-300 duration-200 ease-in">
+      {genre}
+    </div>
+  </div>
+</a>

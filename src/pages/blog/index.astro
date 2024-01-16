@@ -2,21 +2,20 @@
 import { getCollection } from "astro:content";
 import BlogPostTemplate from "../../components/BlogPageTemplate/index.astro";
 
-
 const posts = await getCollection("blog");
 import Main from "../../layouts/Layout.astro";
-
 ---
 
 <Main title="blog">
-  <div class="w-full flex flex-col gap-y-12 mx-auto bg-black py-20">
+  <div class="w-full flex flex-col gap-y-12 mx-auto bg-black py-10  xl:pt-10 xl:pb-40 container-max-width">
     <div
-      class="text-9xl font-semibold font-anton text-white ml-16 w-3/6 text-left py-12 pr-4 tracking-wide"
+      class="text-6xl sm:text-9xl font-semibold font-anton text-white  px-3 xl:px-16 w-full xl:w-3/6 text-left xl:pb-20 tracking-wide leading-snug xl:leading-none xl:whitespace-nowrap"
     >
-      updates from our world
+      updates from our
+      <span class="text-white/50">world</span>
     </div>
     <div
-      class="grid grid-cols-2 xl:grid-cols-3 place-items-start gap-y-10 mx-16"
+      class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 place-items-start gap-y-10 mx-auto sm:mx-3 xl:mx-16"
     >
       {
         posts.map((post) => (

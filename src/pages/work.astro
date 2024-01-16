@@ -16,19 +16,20 @@ import Main from "../layouts/Layout.astro";
 ---
 
 <Main title="work">
-  <div class="w-full flex flex-col gap-y-12 mx-auto bg-black py-20">
+  <div class="w-full flex flex-col gap-y-12 mx-auto bg-black pb-20 xl:pt-20 xl:pb-20 px-3 sm:px-5 xl:px-16 leading-snug xl:leading-none container-max-width">
     <div
-      class="text-9xl font-semibold font-anton text-white mx-auto w-full text-left py-12 pl-16 pr-4 tracking-wide"
+      class="text-6xl sm:text-9xl font-semibold font-anton text-white mx-auto w-full text-left py-6 sm:py-12 pr-4 tracking-wide leading-relaxed sm:leading-none px-3 sm:px-16"
     >
-      We shape brands that <br /> need no introduction
+      We shape brands that <br />
+      <span class="text-white/50"> need no introduction</span>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 pl-16 gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 px-3 sm:px-16 gap-10">
       {
         image.map((index) => (
           <div class="cursor-pointer flex flex-col items-start justify-center gap-y-8 w-auto px-0">
-            <div class="flex flex-col items-start justify-center gap-y-8 group hover:scale-105 duration-200 ease-in">
+            <div class="flex flex-col items-start justify-center gap-y-8 group hover:scale-105 duration-200 ease-in ">
               <WorkPageTemplate image={index.path} />
-              <span class="uppercase text-white group-hover:text-gray-200 text-4xl font-medium font-anton group-hover:underline ">
+              <span class="uppercase text-white group-hover:text-gray-200 text-2xl sm:text-3xl xl:text-4xl font-medium font-anton group-hover:underline ">
                 {index.title}
               </span>
             </div>

@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container-max-width {
+  max-width: 6xl;
+  width: full;
+}

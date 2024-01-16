@@ -9,12 +9,14 @@ const { title, genre, path = "/Images/blog3.png", href } = Astro.props;
   <img
     src={path}
     alt="a"
-    class="w-96 h-68 object-contain rounded-3xl hover:opacity-70"
+    class="w-80 xl:w-96 h-60 xl:h-68 object-contain rounded-3xl hover:opacity-70"
   />
   <div
-    class="text-2xl font-semibold text-white font-inter w-80 group-hover:underline"
+    class="text-xl xl:text-2xl font-semibold text-white font-inter w-80 group-hover:underline"
   >
     {title}
   </div>
-  <div class="text-xl font-medium text-zinc-400 font-inter">{genre}</div>
+  <div class="text-base xl:text-xl font-medium text-zinc-400 font-inter">
+    {genre}
+  </div>
 </a>

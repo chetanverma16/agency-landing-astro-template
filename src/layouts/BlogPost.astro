@@ -5,7 +5,9 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import Navbar from "../components/Navbar/index.astro";
 import Footer from "../components/Footer/index.astro";
+import Avatar from "../components/Avatar/index.astro";
 import { Icon } from "astro-icon/components";
+import LatestArticle from "../components/LatestArticle/index.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -20,88 +22,104 @@ const {
 } = Astro.props;
 
 const article = [
-  { path: "/Images/blog2.png" },
-  { title: "The Ultimate Guide to Becoming a Great Designer" },
-  { genre: "The Ultimate Guide to Becoming a Great Designer" },
+  {
+    path: "/Images/blog2.png",
+    title: "The Ultimate Guide to Becoming a Great Designer",
+    genre: "Presentation Tips",
+  },
+  {
+    path: "/Images/blog2.png",
+    title: "The Ultimate Guide to Becoming a Great Designer",
+    genre: "Presentation Tips",
+  },
+  {
+    path: "/Images/blog2.png",
+    title: "The Ultimate Guide to Becoming a Great Designer",
+    genre: "Presentation Tips",
+  },
 ];
 ---
 
-<html lang="en">
-  <body>
-    <Navbar />
-    <main
-      class="py-6 flex flex-col justify-center items-center gap-y-10 px-20 bg-black text-white"
-    >
-      <div class="flex flex-col items-center justify-center">
-        <h1 class="text-[120px] font-semibold font-inter">{title}</h1>
-        <div class="text-xl font-inter font-semibold text-zinc-400">
-          <FormattedDate date={pubDate} />
-          {
-            updatedDate && (
-              <div class="last-updated-on">
-                Last updated on <FormattedDate date={updatedDate} />
-              </div>
-            )
-          }
-        </div>
-      </div>
-
-      {
-        heroImage && (
-          <img
-            class="h-96 overflow-hidden object-cover my-10 shadow-md shadow-zinc-600/70 "
-            width={1020}
-            height={510}
-            src={heroImage}
-            alt=""
-          />
-        )
-      }
-
-      <article
-        class="flex flex-col items-center justify-center gap-y-10 text-zinc-50 font-medium font-inter text-xl px-96"
+<body>
+  <Navbar />
+  <main
+    class="py-6 flex flex-col justify-center items-center gap-y-10 px-3 sm:px-20 pt-5 pb-20 bg-black text-white container-max-width"
+  >
+    <div class="flex flex-col items-center justify-center gap-y-8">
+      <h1
+        class="text-6xl sm:text-9xl font-semibold font-anton leading-snug xl:leading-none"
       >
-        <slot />
-      </article>
-      <div class="w-full px-96 flex items-center justify-start gap-3">
-        <img
-          class="h-16 w-16 rounded-full overflow-hidden object-cover my-10"
-          width={1020}
-          height={510}
-          src={publisherImage}
-          alt=""
-        />
-        <div class="flex flex-col items-start justify-center">
-          <div class="text-zinc-50 font-semibold text-2xl">{publisherName}</div>
-          <div class="font-semibold text-lg text-zinc-500">{publisherBio}</div>
-        </div>
+        {title}
+      </h1>
+      <div class="text-xl font-inter font-semibold text-zinc-400">
+        <FormattedDate date={pubDate} />
+        {
+          updatedDate && (
+            <div>
+              Last updated on <FormattedDate date={updatedDate} />
+            </div>
+          )
+        }
       </div>
-      <div class="px-20 w-full flex items-center justify-between">
-        <div class="font-semibold font-inter text-3xl">Latest articles</div>
-        <div class="flex items-center justify-center gap-3 group">
-          <span
-            class="text-zinc-400 font-inter cursor-pointer font-medium text-2xl group-hover:underline"
-            >View all articles</span
-          >
-          <Icon name="right" class="h-6 w-8" />
-        </div>
-      </div>
-      <div class="h-[1.5px] w-full bg-zinc-500 mx-20"></div>
-    </main>
-    <div class="w-full px-24">
-      {
-        article.map((index) => (
-          <div>
-            <div />
-            <>
-              <div />
-              <div />
-            </>
-          </div>
-        ))
-      }
     </div>
 
-    <Footer />
-  </body>
-</html>
+    {
+      heroImage && (
+        <img
+          class="h-96 overflow-hidden object-cover mt-5 mb-10 shadow-md shadow-zinc-600/70 "
+          width={1020}
+          height={510}
+          src={heroImage}
+          alt=""
+        />
+      )
+    }
+
+    <article
+      class="flex flex-col items-center justify-center gap-y-10 text-zinc-50 font-medium font-inter text-xl px-3 xl:px-48"
+    >
+      <slot />
+    </article>
+    <div class="w-full xl:px-48 flex items-center justify-start gap-3">
+      <Avatar src="/Images/AvatarBlog.png" />
+      <div class="flex flex-col items-start justify-center cursor-pointer">
+        <div class="text-zinc-50 font-semibold text-2xl">{publisherName}</div>
+        <div class="font-semibold text-lg text-zinc-500">{publisherBio}</div>
+      </div>
+    </div>
+    <div
+      class="xl:px-20 w-full flex flex-col xl:flex-row gap-y-3 items-start sm:items-center justify-start sm:justify-between"
+    >
+      <div class="font-semibold font-inter text-xl sm:text-3xl">
+        Latest articles
+      </div>
+      <div
+        class="flex flex-row items-start justify-center gap-1 sm:gap-3 group"
+      >
+        <span
+          class="text-zinc-400 group-hover:text-white font-inter cursor-pointer font-medium text-lg sm:text-2xl group-hover:underline"
+          >View all articles</span
+        >
+        <Icon name="right" class="h-7 w-8" />
+      </div>
+    </div>
+    <div class="h-[1.5px] w-full bg-zinc-500 mx-20"></div>
+  </main>
+  <div
+    class="sm:w-full flex flex-wrap xl:flex-nowrap xl:flex-row  items-start xl:items-center justify-start xl:justify-center px-3 xl:px-24 bg-black"
+  >
+    {
+      article.map((index) => (
+        <div class="w-full flex flex-wrap items-center justify-start sm:justify-center px-24 ">
+          <LatestArticle
+            src={index.path}
+            title={index.title}
+            genre={index.genre}
+          />
+        </div>
+      ))
+    }
+  </div>
+
+  <Footer />
+</body>

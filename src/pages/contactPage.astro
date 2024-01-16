@@ -1,25 +1,27 @@
 ---
 import "@fontsource/anton";
-import Navbar from "../components/Navbar/index.astro";
-import Footer from "../components/Footer/index.astro";
 import Button from "../components/Button/index.astro";
 import Main from "../layouts/Layout.astro";
 ---
 
 <Main title="contact">
   <div
-    class="flex flex-col items-center justify-center gap-y-20 pt-20 pb-40 w-full mx-auto bg-black"
+    class="flex flex-col items-center justify-center gap-y-20 pt-20 pb-40 w-full mx-auto bg-black container-max-width"
   >
     <div class="flex flex-col items-center justify-center text-center gap-y-6">
-      <div class="text-8xl font-medium font-anton text-white">Get in touch</div>
-      <div class="text-lg font-inter text-stone-400 w-3/6 text-center">
+      <div class="text-6xl sm:text-9xl font-medium font-anton text-white">
+        Get in touch
+      </div>
+      <div class="text-lg font-inter text-stone-400 xl:w-3/6 text-center px-3">
         We're revolutionizing the digital landscape for businesses, eliminating
         the complexities associated with freelancers and expensive traditional
         agencies.
       </div>
     </div>
-    <div class="flex flex-col gap-y-10">
-      <div class="flex items-start justify-between gap-2">
+    <div class="flex flex-col items-center justify-center gap-y-10">
+      <div
+        class="flex sm:flex-row flex-col items-center sm:items-start justify-between w-full gap-16"
+      >
         <div class="flex flex-col items-start justify-between gap-y-2">
           <span class="font-inter text-base font-medium text-white"
             >First Name</span
@@ -39,7 +41,9 @@ import Main from "../layouts/Layout.astro";
           />
         </div>
       </div>
-      <div class="flex items-end justify-between gap-2">
+      <div
+        class="flex sm:flex-row flex-col items-center sm:items-start justify-between w-full gap-16"
+      >
         <div class="flex flex-col items-start justify-between gap-y-2">
           <span class="font-inter text-base font-medium text-white">Email</span>
           <input
@@ -47,6 +51,7 @@ import Main from "../layouts/Layout.astro";
             placeholder="Rahul"
           />
         </div>
+
         <div class="flex flex-col items-start justify-between gap-y-2">
           <span class="font-inter text-base font-medium text-white"
             >Phone number</span
@@ -57,16 +62,18 @@ import Main from "../layouts/Layout.astro";
           />
         </div>
       </div>
-      <div class="flex items-center justify-between gap-2 w-full">
-        <div class="flex flex-col items-start justify-between gap-y-2 w-full">
-          <span class="font-inter text-base font-medium text-white"
-            >First Name</span
-          >
+
+      <div
+        class="flex flex-col sm:flex-row items-center sm:items-start justify-center w-full gap-16 "
+      >
+        <div class="flex flex-col items-start justify-between gap-y-2 sm:w-full">
+          <span class="font-inter text-base font-medium text-white">Email</span>
           <textarea
-            class="py-3 w-full h-36 px-3 placeholder:font-inter font-inter text-lg rounded-lg font-medium placeholder:font-medium text-zinc-300 placeholder:text-zinc-700 bg-zinc-800"
+            class="py-3 w-80 sm:w-full h-32 px-3 placeholder:font-inter font-inter text-lg rounded-lg font-medium placeholder:font-medium text-zinc-300 placeholder:text-zinc-700 bg-zinc-800"
             placeholder="We love creative agency"></textarea>
         </div>
       </div>
+
       <div class="w-full mx-auto pt-10">
         <Button intent="secondary" size="medium">Sent this message</Button>
       </div>

@@ -5,6 +5,7 @@ interface Props {
 import Navbar from "../components/Navbar/index.astro";
 import Footer from "../components/Footer/index.astro";
 const { title } = Astro.props;
+import GradiantBlob from "../components/GradiantBlob/index.astro"
 ---
 
 <!doctype html>
@@ -18,10 +19,13 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Navbar />
-    <main>
-      <slot />
-    </main>
+    <div class="relative w-full">
+      <GradiantBlob/>
+      <Navbar />
+      <main>
+        <slot />
+      </main>
+    </div>
     <Footer />
   </body>
 </html>
