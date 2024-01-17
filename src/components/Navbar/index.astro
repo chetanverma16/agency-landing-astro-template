@@ -8,9 +8,9 @@ import Link from "../Link/index.astro";
 <div
   class="flex items-center justify-between bg-black text-white py-10 px-3 sm:px-16  container-max-width"
 >
-  <Link href="/" current>
+  <Link href="/" current={Astro.url.pathname === "/"}>
     <div
-      class="rounded-full bg-[#2E2E2E] w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center font-anton text-xl sm:text-2xl z-20"
+      class="rounded-full bg-[#2E2E2E] w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center font-anton text-xl sm:text-2xl z-20 "
     >
       CA
     </div>
@@ -18,10 +18,10 @@ import Link from "../Link/index.astro";
   <div
     class="flex items-center justify-between gap-7 w-auto sm:w-44 font-anton text-xl sm:text-2xl"
   >
-    <Link href="/work" current>
+    <Link href="/work" current={Astro.url.pathname === "/work"}>
       <div class="cursor-pointer hover:opacity-80 ">work</div>
     </Link>
-    <Link href="/blog" current >
+    <Link href="/blog" current={Astro.url.pathname === "/blog"} >
       <div class="hover:opacity-90 cursor-pointer ">blog</div>
     </Link>
   </div>
