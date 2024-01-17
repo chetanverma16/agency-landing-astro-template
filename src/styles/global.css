@@ -1,11 +1,9 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: #81CC06;
-
+  @apply min-h-screen flex flex-col bg-[#000];
 }
 
+
 .container-max-width {
-  max-width: 6xl;
-  width: full;
+  @apply w-full max-w-6xl mx-auto  ;
+  
 }

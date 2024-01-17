@@ -1,21 +1,21 @@
 ---
-const {page=""} = Astro.props;
+const { page = "" } = Astro.props;
 // Set the default top value
-let topValue = "2.8%";
-let leftValue = "1%";
+let topValue = "-150px";
+let leftValue = "14%";
 
 // Check if the page is "blog" and update topValue accordingly
 if (page === "blog") {
   topValue = "-290px";
-  leftValue="-80px";
+  leftValue = "14%";
 }
 ---
+
 <div
-  
   style={{
     top: topValue,
     left: leftValue,
   }}
-  class="h-60 w-44  bg-neutral-100/50 absolute rounded-full filter blur-3xl opacity-70"
+  class=" h-48 sm:h-60 w-48 sm:w-44 bg-neutral-100/50 absolute rounded-full filter blur-3xl z-10 opacity-70 pointer-events-auto"
 >
 </div>
