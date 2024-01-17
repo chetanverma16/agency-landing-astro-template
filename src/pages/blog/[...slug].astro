@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../layouts/blogPost.astro"
+import BlogPost from "../../layouts/BlogPost.astro"
 const posts = await getCollection("blog");
 type Props = CollectionEntry<"blog">;
 
