@@ -81,11 +81,11 @@ const customerFeedback = [
     WORDS FROM OUR <br /> PARTNERS
   </div>
 
-  <swiper-container class="w-full h-full" loop="false" init="false">
+  <swiper-container class="w-full h-full " loop="false" init="false">
     {
       customerFeedback.map((index) => (
         <swiper-slide class=" py-16  cursor-grab  flex items-center justify-center ">
-          <div class=" box-shadow-2 rounded-md   text-white w-3/4 ">
+          <div class=" box-shadow-2 rounded-md text-white w-5/6 ">
             <div class="flex items-center justify-center">
               <Testimonial name={index.name} description={index.description} />
             </div>
