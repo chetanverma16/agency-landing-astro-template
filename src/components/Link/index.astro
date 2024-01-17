@@ -12,8 +12,8 @@ const { href, current } = Astro.props;
   href={href}
   class:list={[
     {
-      "text-white hover:text-white/95": current,
-      "text-neutral-100/65 ": !current,
+      "text-white hover:text-white hover:text-none 	 ": current,
+      "text-neutral-100/65 hover:opacity-65 ": !current,
     },
     "transition duration-150 ease-in-out",
   ]}
