@@ -1,5 +1,5 @@
 ---
-const { title, genre, path = "/Images/blog3.png", href } = Astro.props;
+const { title, genre, src = "/Images/blog3.png", href } = Astro.props;
 ---
 
 <a
@@ -7,7 +7,7 @@ const { title, genre, path = "/Images/blog3.png", href } = Astro.props;
   href={href}
 >
   <img
-    src={path}
+    src={src}
     alt="a"
     class="w-80 xl:w-96 h-60 xl:h-68 object-contain rounded-3xl hover:opacity-70"
   />
