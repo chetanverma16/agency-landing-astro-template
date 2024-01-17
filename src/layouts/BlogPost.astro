@@ -8,6 +8,7 @@ import Footer from "../components/Footer/index.astro";
 import Avatar from "../components/Avatar/index.astro";
 import { Icon } from "astro-icon/components";
 import LatestArticle from "../components/LatestArticle/index.astro";
+import GradiantBlob from "../components/GradiantBlob/index.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -38,8 +39,9 @@ const article = [
 <body>
   <Navbar />
   <main
-    class="py-6 flex flex-col justify-center items-center gap-y-10 px-3 sm:px-20 pt-5 pb-20 bg-black text-white container-max-width"
+  class="py-6 flex flex-col justify-center items-center gap-y-10 px-3 sm:px-20 pt-5 pb-20 bg-black text-white relative container-max-width"
   >
+  <GradiantBlob page="blog" />
     <div class="flex flex-col items-center justify-center gap-y-8">
       <h1
         class="text-6xl sm:text-9xl font-semibold font-anton leading-snug xl:leading-none"
