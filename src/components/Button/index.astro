@@ -3,7 +3,6 @@ import type { HTMLAttributes } from "astro/types";
 import { cva, type VariantProps } from "class-variance-authority";
 import "@fontsource/anton";
 
-
 const button = cva("button", {
   variants: {
     intent: {
@@ -26,8 +25,14 @@ const button = cva("button", {
       ],
     },
     size: {
-      small: ["text-sm"," font-anton", "py-1", "px-2"],
-      medium: ["text-xl sm:text-2xl"," font-anton", "font-medium", "py-2", "px-8"],
+      small: ["text-sm", " font-anton", "py-1", "px-2"],
+      medium: [
+        "text-xl sm:text-2xl",
+        " font-anton",
+        "font-medium",
+        "py-2",
+        "px-8",
+      ],
     },
   },
   compoundVariants: [
@@ -47,9 +52,9 @@ export interface Props
  * For Astro components, we recommend setting your defaultVariants within
  * Astro.props (which are `undefined` by default)
  */
-const { intent = "primary", size = "medium" } = Astro.props;
+const { intent = "primary", size = "medium", id } = Astro.props;
 ---
 
-<button class={button({ intent, size })}>
+<button id={id} class={button({ intent, size })}>
   <slot />
 </button>
