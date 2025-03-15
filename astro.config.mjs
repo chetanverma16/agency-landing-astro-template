@@ -9,6 +9,10 @@ export default defineConfig({
   integrations: [tailwind(), icon(), mdx()],
   output: "server",
   adapter: cloudflare({
-    mode: "directory",
+    mode: "advanced",
+    runtime: {
+      mode: "local",
+      type: "pages",
+    },
   }),
 });
