@@ -10,7 +10,7 @@ import Avatar from "../components/Avatar/index.astro";
 import { Icon } from "astro-icon/components";
 import LatestArticle from "../components/LatestArticle/index.astro";
 import GradiantBlob from "../components/GradiantBlob/index.astro";
-
+import Main from "./Layout.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const {
@@ -37,8 +37,7 @@ const article = [
 ];
 ---
 
-<body class="container-max-width">
-  <Navbar />
+<Main title="Blog">
   <main
     class="py-6 flex flex-col justify-center items-center gap-y-10 px-3 sm:px-20 pb-20 bg-black text-white relative"
   >
@@ -91,7 +90,8 @@ const article = [
       <div class="font-semibold font-inter text-xl sm:text-3xl">
         Latest articles
       </div>
-      <div
+      <a
+        href="/blog"
         class="flex flex-row items-start justify-center gap-1 sm:gap-3 group"
       >
         <span
@@ -99,7 +99,7 @@ const article = [
           >View all articles</span
         >
         <Icon name="right" class="h-7 w-8" />
-      </div>
+      </a>
     </div>
     <div class="h-[1.5px] w-full bg-zinc-500 mx-20"></div>
   </main>
@@ -120,4 +120,4 @@ const article = [
   </div>
 
   <Footer />
-</body>
+</Main>
